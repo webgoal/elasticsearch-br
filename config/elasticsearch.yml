@@ -1,0 +1,12 @@
+index:
+  analysis:
+    filter:
+      brazilian_stop:
+        type: stop
+        stopwords: _brazilian_
+        split_on_numerics: false
+    analyzer:
+      default:
+        type: custom
+        tokenizer: standard
+        filter: [word_delimiter, lowercase, asciifolding, brazilian_stop]
