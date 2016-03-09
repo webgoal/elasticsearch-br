@@ -1,12 +1,17 @@
 index:
+  query:
+    bool:
+      max_clause_count: 2048
   analysis:
     filter:
       brazilian_stop:
         type: stop
         stopwords: _brazilian_
+      word_delimiter_alphanum:
+        type: word_delimiter
         split_on_numerics: false
     analyzer:
       default:
         type: custom
         tokenizer: standard
-        filter: [word_delimiter, lowercase, asciifolding, brazilian_stop]
+        filter: [word_delimiter_alphanum, lowercase, asciifolding, brazilian_stop]
