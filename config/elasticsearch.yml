@@ -1,3 +1,5 @@
+bootstrap:
+  mlockall: true
 index:
   query:
     bool:
